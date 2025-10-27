@@ -26,6 +26,11 @@ Static marketing site for the BewerbungsWerk service, highlighting offerings tha
    ```
 3. Visit `http://localhost:8000` in your browser.
 
+## Deployment
+- Push changes to the `main` branch; the included GitHub Actions workflow publishes the site to GitHub Pages automatically.
+- On first use, visit your repository settings → Pages and confirm the build and deployment source is set to "GitHub Actions".
+- After the workflow completes, the live site URL is exposed in the deployment summary and under the Pages settings screen.
+
 ## Customising
 - Replace assets in `images/` with brand-appropriate alternatives.
 - Update copy in `index.html` to reflect new services or contact details.
@@ -34,4 +39,3 @@ Static marketing site for the BewerbungsWerk service, highlighting offerings tha
 ## Notes
 - No build tooling or dependencies are required.
 - A license has not been provided; add one if you plan to publish the project.
-
