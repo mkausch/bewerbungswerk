@@ -178,7 +178,7 @@ img {
 .hero__image {
   min-height: 240px;
   border-radius: 24px;
-  background: url("People.png") center/cover;
+  background: url("images/People.png") center/cover;
 }
 
 .products {
