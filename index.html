@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BewerbungsWerk – Geschliffene Bewerbungen für Lernende</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img class="brand__logo-img" src="logo.png" alt="BewerbungsWerk Logo">
+      <span class="brand__name">BewerbungsWerk</span>
+    </div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="visually-hidden">Menü</span>
+    </button>
+    <nav id="primary-nav" class="site-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#products">Dienstleistungen</a></li>
+        <li><a href="#about">Über</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <h1>Geschliffene Bewerbungen für Lernende</h1>
+        <p>Du erzählst mir deine Geschichte und deine Erfolge &ndash; ich verwandle sie in einen modernen Lebenslauf und ein Motivationsschreiben für deine Lehrstelle, das auffällt.</p>
+        <a class="button" href="#products">Dienstleistungen ansehen</a>
+      </div>
+      <div class="hero__image" aria-hidden="true"></div>
+    </section>
+
+    <section id="products" class="products">
+      <h2>Dienstleistungen</h2>
+      <div class="product-grid">
+        <article class="product-card">
+          <h3>Individuelles Lebenslauf-Design</h3>
+          <p>Du bringst deine Erfahrung, Ausbildung und Stärken mit &ndash; ich forme daraus einen professionellen Lebenslauf, der dich auf dem Weg in die Lehre ins beste Licht rückt.</p>
+        </article>
+        <article class="product-card">
+          <h3>Layout für Motivationsschreiben zur Lehrstelle</h3>
+          <p>Ich verwandle deine Stichpunkte in ein überzeugendes Motivationsschreiben für deine Wunschlehrstelle &ndash; klar strukturiert und im passenden Ton.</p>
+        </article>
+        <article class="product-card">
+          <h3>Markenkonforme Präsentation</h3>
+          <p>Schriften, Farben und Layout sind auf die Branche deiner Lehrstelle abgestimmt, damit Lebenslauf und Motivationsschreiben einen stimmigen Eindruck hinterlassen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>Warum BewerbungsWerk</h2>
+      <p>Mit jahrelanger Design-Erfahrung kombiniere ich klare Layouts, sorgfältige Typografie und strategisches Storytelling, damit deine Geschichte sofort überzeugt. Du lieferst den Rohinhalt &ndash; ich erstelle einen geschliffenen Lebenslauf und ein Motivationsschreiben, die deinen Wert als angehende*r Lehrling schnell und klar vermitteln.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-content">
+      <h2>Kontakt aufnehmen</h2>
+      <p>Marlena Kausch &ndash; Winterthur</p>
+      <p><a href="mailto:marlena@kausch.li">marlena@kausch.li</a></p>
+    </div>
+    <p class="footer-note">&copy; <span id="year"></span> BewerbungsWerk. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script>
+    // Toggle navigation on smaller screens
+    const navToggle = document.querySelector('.nav-toggle');
+    const navigation = document.getElementById('primary-nav');
+
+    if (navToggle && navigation) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        navigation.classList.toggle('site-nav--open');
+      });
+
+      navigation.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navigation.classList.remove('site-nav--open');
+        });
+      });
+    }
+
+    // Insert current year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
+</body>
+</html>
